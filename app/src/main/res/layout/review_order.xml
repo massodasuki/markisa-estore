@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#ABACB3"
+    android:orientation="vertical"
+    tools:context="com.markisa.estore.ReviewOrderActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:title="Review Order"
+            app:titleMarginStart="50dp" />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1.9"
+            android:background="#FFFFFF"
+            android:stretchColumns="1">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:stretchColumns="1">
+
+                <TextView
+                    android:id="@+id/subTotalTextView"
+                    android:padding="3dp"
+                    android:text="Subtotal" />
+
+                <TextView
+                    android:id="@+id/subtotalValueTexView"
+                    android:layout_column="1"
+                    android:gravity="end"
+                    android:padding="3dp"
+                    android:text="0.00" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/shippingTextView"
+                    android:padding="3dp"
+                    android:text="Shipping" />
+
+                <TextView
+                    android:id="@+id/shippingValueTextView"
+                    android:gravity="end"
+                    android:padding="3dp"
+                    android:text="0.00" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/taxTextView"
+                    android:padding="3dp"
+                    android:text="Tax" />
+
+                <TextView
+                    android:id="@+id/taxValueTextView"
+                    android:gravity="end"
+                    android:padding="3dp"
+                    android:text="0.00" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/orderTotalTextView"
+                    android:padding="3dp"
+                    android:text="Order Total" />
+
+                <TextView
+                    android:id="@+id/orderTotalValueTextView"
+                    android:gravity="end"
+                    android:padding="3dp"
+                    android:text="0.00" />
+            </TableRow>
+        </TableLayout>
+
+
+<!--        <TableLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_marginBottom="5dp"-->
+<!--            android:layout_weight="2"-->
+<!--            android:background="#FFFFFF"-->
+<!--            android:stretchColumns="1">-->
+
+<!--            <TableRow-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent">-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/paymentMethodTextView"-->
+<!--                    android:padding="3dp"-->
+<!--                    android:text="Pay With" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/paymentMethodValueTextView"-->
+<!--                    android:gravity="end"-->
+<!--                    android:padding="3dp"-->
+<!--                    android:text="Method" />-->
+<!--            </TableRow>-->
+
+<!--        </TableLayout>-->
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1"
+            android:background="#FFFFFF"
+            android:stretchColumns="1">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/productImageView"
+                    android:layout_width="111dp"
+                    android:layout_height="64dp"
+                    app:srcCompat="@drawable/rock_image" />
+
+                <TextView
+                    android:id="@+id/productNameValueTextView"
+                    android:gravity="center"
+                    android:padding="3dip"
+                    android:text="Rock" />
+
+                <TextView
+                    android:id="@+id/productQtyPriceValueTextView"
+                    android:gravity="end"
+                    android:padding="3dip"
+                    android:text="$1" />
+            </TableRow>
+
+        </TableLayout>
+
+
+    </LinearLayout>
+
+    <!-- Save & Cancel button -->
+    <include
+        android:id="@+id/googlePayButton"
+        layout="@layout/buy_with_googlepay_button"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/buy_button_height"
+        android:layout_marginBottom="20dp"
+        android:visibility="gone" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+        <Button
+            android:id="@+id/placeOrderButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_weight="1"
+            android:text="PLACE ORDER" />
+
+    </LinearLayout>
+
+</RelativeLayout>
